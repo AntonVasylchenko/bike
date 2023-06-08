@@ -1,0 +1,62 @@
+:root {
+    /* Color */
+    --color-elem: #297FFF;
+    --color-stroke: #DDE3EB;
+    --color-captions: #ABB1C5;
+    --color-text-tab: #737B98;
+    --color-text: #14233D;
+    --color-add-1: #FF6B00;
+    --color-add-2: #EDAB00;
+    --color-add-3: #28B737;
+    /* Font */
+    --font-main: 'Montserrat', sans-serif;
+    --font-add-1: 'Nunito Sans', sans-serif;
+    --font-add-2: 'IBM Plex Sans', sans-serif;
+    --font-add-3: 'IBM Plex Mono', monospace;
+    /* Size */
+    --size-h1: 36px;
+    --size-h2: 24px;
+    --size-h3: 18px;
+    --size-text: 16px;
+    --size-captions: 14px;
+}
+
+.h1 {
+    font-family: var(--font-main);
+    font-size: var(--size-h1);
+    font-weight: 600;
+    line-height: 43px;
+    letter-spacing: 0em;
+}
+
+.h2 {
+    font-family: var(--font-main);
+    font-size: var(--size-h2);
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0em;
+}
+
+.h3 {
+    font-family: var(--font-main);
+    font-size: var(--size-h3);
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0px;
+}
+
+.text {
+    font-family: var(--font-main);
+    font-size: var(--size-text);
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0px;
+}
+
+.captions{
+    font-family: var(--font-main);
+    font-size: var(--size-captions);
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0px;
+}
