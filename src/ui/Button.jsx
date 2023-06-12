@@ -36,7 +36,7 @@ const Button = ({ className, outline, disabled, children, onClick }) => {
 Button.propTypes = {
     className:PropTypes.string.isRequired,
     outline:PropTypes.bool.isRequired,
-    disibled:PropTypes.bool.isRequired,
+    disabled:PropTypes.bool.isRequired,
 }
 Button.defaultProps = {
     className: "",

@@ -15,6 +15,7 @@
     --font-add-2: 'IBM Plex Sans', sans-serif;
     --font-add-3: 'IBM Plex Mono', monospace;
     /* Size */
+    --size-h0: 48px;
     --size-h1: 36px;
     --size-h2: 24px;
     --size-h3: 18px;
