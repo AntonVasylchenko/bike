@@ -6,10 +6,15 @@ import App from './App';
 import "./assets/reset.css"
 import "./assets/root.css"
 import "./assets/base.css"
+import { BrowserRouter } from 'react-router-dom';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+
+    </BrowserRouter>
   </React.StrictMode>
 );
