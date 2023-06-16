@@ -9,6 +9,7 @@
     --color-add-2: #EDAB00;
     --color-add-3: #28B737;
     --color-white: #fff;
+    --color-bg-section: #F2F4F7;
     /* Font */
     --font-main: 'Montserrat', sans-serif;
     --font-add-1: 'Nunito Sans', sans-serif;
@@ -74,6 +75,11 @@
     letter-spacing: 0px;
 }
 
+.swiper-wrapper {
+    -webkit-transition-timing-function:linear!important;    
+    transition-timing-function:linear!important; 
+    position: relative;
+}
 
 
 @media(max-width: 768px) {

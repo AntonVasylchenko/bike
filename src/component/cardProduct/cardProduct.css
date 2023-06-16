@@ -1,0 +1,112 @@
+.product-item {
+    max-width: calc(100% / 4 - 40px * 3 / 4);
+    width: calc(100% / 4 - 40px * 3 / 4);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.product-item_media {
+    position: relative;
+    width: 100%;
+    padding-bottom: 50%;
+}
+
+.product-item_media img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-item_info {
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 50px 24px 20px 24px;
+    width: 100%;
+}
+
+.product-title {
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-info_price {
+    font-family: var(--font-main);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: var(--color-elem);
+}
+
+.product-info_add {}
+
+.product-info_question {
+    margin-right: 10px;
+}
+
+.product-info_question,
+.product-info_plus {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    max-width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #DDE3EB;
+    text-align: center;
+    line-height: 40px;
+    font-family: var(--font-main);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    color: var(--color-elem);
+}
+
+.product-description {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 100%;
+
+    color: #ABB1C5;
+
+    font-family: var(--font-main);
+    font-size: var(--size-captions);
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0px;
+}
+.product-description p {
+    padding: 12px;
+}
+
+@media(max-width: 1024px) {
+    .product-item {
+        max-width: calc(100% / 2 - 20px * 1 / 2);
+        width: calc(100% / 2 - 20px * 1 / 2);
+    }
+}
+@media(max-width: 768px) {
+    .product-item {
+        max-width: 100%;
+        width: 100%;
+    }
+}

@@ -36,7 +36,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container page-width">
         <div className="header-logo">
-          <NavLink to="/">
+          <NavLink to="/bike">
             <Icon type={"logo"} />
           </NavLink>
         </div>
