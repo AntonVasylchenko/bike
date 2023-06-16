@@ -1,0 +1,128 @@
+.header {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+.header a.active {
+    color: var(--color-elem);
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    grid-column-gap: 32px;
+}
+
+.header-logo {}
+
+.header-nav {}
+
+.header-nav_list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header-nav_list>*:not(:last-child) {
+    margin-right: 20px;
+}
+
+.header-nav_item {}
+
+.header-link {
+    font-family: var(--font-main);
+    font-size: var(--size-text);
+    color: var(  --color-text);
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.header-info {}
+
+.header-info_list {
+    display: flex;
+    align-items: center;
+}
+
+.header-info_list>*:not(:last-child) {
+    margin-right: 20px;
+}
+
+.header-info_item {}
+
+
+.header-info_tel {}
+
+.header-info_account.active {}
+
+.header-info_account {}
+
+.header-info_feedback.active {}
+
+.header-info_feedback {}
+
+.header-icon {
+    display: none;
+}
+
+.header-mobile {
+    display: none;
+}
+
+@media(max-width: 998px) {
+    .header-container {
+        grid-column-gap: 0px;
+    }
+    .header-icon {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .header-info,
+    .header-nav {
+        display: none;
+    }
+    .header-mobile {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: auto;
+        left: -100%;
+        top: 89px;
+    }
+    .header-mobile.show {
+        left: 40px;
+        transition: left 0.3s ease;
+    }
+
+    .header-mobile {
+        width: 100%;
+        max-width: calc(100% - 40px);
+    }
+    .header-link {
+        font-size: var( --size-h2);
+        font-weight: 500;
+        line-height: 29px;
+        letter-spacing: 0em;
+    }
+    .mobile-nav_list,
+    .header-mobile-info_list {
+        display: flex;
+        flex-direction: column;
+    }
+    .mobile-nav_list >*:not(:last-child), 
+    .header-mobile-info_list >*:not(:last-child) {
+        margin-bottom: 32px;
+    }
+    .header-mobile_info {
+        margin-top: 98px;
+    }
+
+    .header-mobile-info_list li {
+        text-align: center;
+    }
+
+}

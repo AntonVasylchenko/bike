@@ -1,8 +1,20 @@
 import React from 'react'
+import { Header } from './component'
+import { Route, Routes } from 'react-router-dom'
+import { Home } from './page'
 
-function App() {
+
+
+function App() {  
   return (
-    <div className='App'>Hello</div>
+    <div className='App'>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/bike" element={<Home/>}></Route>
+        </Routes>
+      </main>
+    </div>
   )
 }
 
