@@ -5,7 +5,8 @@
 .list-collection .page-width {
     background-color: var(--color-bg-section);
     border-radius: 20px;
-    padding: 25px 40px 25px 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .list-collection_container {

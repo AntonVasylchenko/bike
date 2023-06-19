@@ -16,10 +16,12 @@ const ListProduct = () => {
     }, [])
 
     const data = useSelector(state => state.data);
-    const { isLoaded, data: products } = data;
+    const { isLoaded, data: products, collection } = data;
     const getQueryPara = (name) => {
         dispath(getCollectionAction(name))
-        dispath(fetchProduct(name))
+    }
+    const showProductItems = () => {
+        dispath(fetchProduct(collection))
     }
 
 
@@ -35,6 +37,7 @@ const ListProduct = () => {
                             products.map(el => {
                                 return (
                                     <CardProduct
+                                        activePlus = {collection === el.name ? true : false}
                                         getSerch={getQueryPara}
                                         key={el.id}
                                         name={el.name}
@@ -46,7 +49,7 @@ const ListProduct = () => {
                             <Preloader />
                     }
                 </div>
-                <Button className="list-collection_button">Search</Button>
+                <Button onClick={showProductItems} className="list-collection_button">Search</Button>
             </div>
         </section>
     )

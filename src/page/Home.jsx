@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeroBanner, ListProduct } from '../component'
+import { CollectionItems, HeroBanner, ListProduct } from '../component'
 
 
 
@@ -8,6 +8,7 @@ const Home = () => {
     <>
       <HeroBanner />
       <ListProduct />
+      <CollectionItems />
     </>
   )
 }

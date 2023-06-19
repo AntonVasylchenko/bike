@@ -22,6 +22,8 @@
     --size-h3: 18px;
     --size-text: 16px;
     --size-captions: 14px;
+    /* Block */
+    --size-block: calc(100% / 4 - 40px * 3 / 4);
 }
 
 .overflow-scroll {

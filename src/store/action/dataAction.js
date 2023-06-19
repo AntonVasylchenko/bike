@@ -3,6 +3,7 @@ const GET_PRODUCT = "GET_PRODUCT";
 const GET_COLLECTION = "GET_COLLECTION";
 
 
+
 export const getCollectionAction = (payload) => ({
     type: GET_COLLECTION,
     payload: payload
