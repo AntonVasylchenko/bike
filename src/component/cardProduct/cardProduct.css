@@ -1,6 +1,6 @@
 .product-item {
-    max-width: calc(100% / 4 - 40px * 3 / 4);
-    width: calc(100% / 4 - 40px * 3 / 4);
+    max-width: var(--size-block);
+    width: var(--size-block);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -76,9 +76,15 @@
     font-weight: 700;
     letter-spacing: 0px;
     color: var(--color-elem);
+    transition: all 0.3s;
 }
-
+.product-info_question.show,
+.product-info_plus.show {
+    background-color: var(--color-elem);
+    color: #fff;
+}
 .product-description {
+    transition: max-height 0.3s ease 0.1s;
     max-height: 0;
     overflow: hidden;
     margin-top: 10px;

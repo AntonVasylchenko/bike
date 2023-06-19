@@ -2,7 +2,7 @@ import React from 'react'
 import "./cardProduct.css"
 
 
-export const CardProduct = ({ name, description,getSerch }) => {
+export const CardProduct = ({ activePlus, name, description, getSerch }) => {
     const descriptionRef = React.useRef();
     const [open, setOpen] = React.useState(true);
     const openDescription = () => {
@@ -22,8 +22,8 @@ export const CardProduct = ({ name, description,getSerch }) => {
             <div className="product-item_info">
                 <h2 className='product-title h3'>{name}</h2>
                 <div className='product-info'>
-                    <span className='product-info_question' onClick={openDescription}>?</span>
-                    <span className='product-info_plus' onClick={handelChange} >+</span>
+                    <span className={!open ? 'product-info_question show' : 'product-info_question'} onClick={openDescription}>?</span>
+                    <span className={activePlus ? 'product-info_plus show' : 'product-info_plus'} onClick={handelChange} >+</span>
                 </div>
             </div>
             <div ref={descriptionRef} className='product-description'>

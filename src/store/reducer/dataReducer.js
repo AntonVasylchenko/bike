@@ -18,14 +18,12 @@ const dataReducer = (state = initialState, action ) => {
             }
         }
         case GET_DATA:
-            console.log(action.payload);
             return {
                 ...state, 
                 data: [...state.data, ...action.payload],
                 isLoaded: true
             }
         case GET_PRODUCT:
-            console.log(action.payload,1);
             return {
                 ...state, 
                 products: [...action.payload]
