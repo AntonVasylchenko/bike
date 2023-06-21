@@ -64,6 +64,10 @@
     color: var(--color-elem);
 }
 
+.item-body_price.total {
+    font-size: 10px;
+}
+
 .collection-item_footer {
     margin-top: 16px;
 }
@@ -71,4 +75,26 @@
 .collection-item_footer .item-footer_btn {
     width: 100%;
     max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .collection-items_wrapper {
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    .collection-item {
+        max-width: calc(100% / 2 - 20px * 1 / 2);
+        width: calc(100% / 2 - 20px * 1 / 2);
+    }
+}
+
+@media (max-width: 768px) {
+    .collection-items_wrapper {
+        column-gap: 0px;
+        row-gap: 20px;
+    }
+    .collection-item {
+        max-width: 100%;
+        width: 100%
+    }
 }

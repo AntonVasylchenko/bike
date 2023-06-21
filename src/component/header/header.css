@@ -94,13 +94,19 @@
         top: 89px;
     }
     .header-mobile.show {
-        left: 40px;
+        left: 0px;
         transition: left 0.3s ease;
+        width: 100%;
+        /* max-width: calc(100% - 40px); */
+        height: 100vh;
+        background: #fff;
+        z-index: 12;
+
     }
 
     .header-mobile {
+        padding-left: 40px;
         width: 100%;
-        max-width: calc(100% - 40px);
     }
     .header-link {
         font-size: var( --size-h2);

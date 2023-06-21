@@ -1,0 +1,100 @@
+.rent {}
+
+.page-width {}
+
+.rent-container {
+    background-color: var(--color-bg-section);
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.rent-container>*:not(:last-child) {
+    margin-right: 40px;
+}
+
+.rent-type {}
+
+.rs-picker-toggle {}
+
+
+.item-filter_type {}
+
+.rent-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: var(--size-block);
+    width: var(--size-block);
+}
+
+.rent-date label {
+    flex: 1;
+    text-transform: capitalize;
+    font-family: var(--font-main);
+    font-size: var(--size-text);
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: var(--color-captions);
+}
+
+.rs-picker-toggle-wrapper {
+    width: 100%;
+}
+
+.rs-picker-toggle {
+    height: 60px !important;
+    border: 1px solid var(--color-stroke) !important;
+    border-radius: 15px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+}
+
+.rs-stack-item svg {
+    top: 18px !important;
+}
+
+.rent-delivey {}
+
+.item-filter_delivey {}
+
+@media(max-width: 1024px) {
+    .rent-container {
+        flex-direction: column;
+    }
+
+    .rent-container>* {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .rent-container>*:not(:last-child) {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+
+    .rs-picker-menu {
+        display: inline-flex !important;
+        width: calc(100% - 80px) !important;
+    }
+
+   .rs-picker-daterange-calendar-group {
+        min-width: fit-content !important;
+        display: flex !important;
+        flex-direction: column !important;
+        height: fit-content !important;
+    }
+    .rs-calendar {
+        width: 100% !important;
+    }
+
+}

@@ -31,11 +31,13 @@ const HeroBanner = () => {
         spaceBetween={50}
         slidesPerView={1}
         loop={true}
+        speed={500}
         modules={[Autoplay]}
         autoplay={{
-            delay: 2500,
+            delay: 3000,
             disableOnInteraction: false
-        }}>
+        }}
+        >
         <SwiperSlide>
           <div className="hero-banner-container page-width">
             <div className="hero-item hero-item_text">
