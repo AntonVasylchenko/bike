@@ -1,5 +1,6 @@
 const initialState = {
     isLoaded: false,
+    isLogin: false,
     collection: "",
     typeRent: "Day",
     typeDelivery: "Address",

@@ -17,6 +17,8 @@ const CollectionItems = () => {
     const collectionItems = useSelector(state => state.data.products);
     const typeRent = useSelector(state => state.data.typeRent);
     const timeRent = useSelector(state => state.data.timeRent);
+    const isLogin = useSelector(state => state.data.isLogin);
+    console.log(isLogin);
     const [para, setPara] = React.useState(
         {
             brand: "",
@@ -88,6 +90,7 @@ const CollectionItems = () => {
                                         sortCollectionItems().map(el => {
                                             return (
                                                 <CollectionItem
+                                                    isLogin={isLogin}
                                                     timeRent={timeRent.hasOwnProperty("day") ? timeRent : initialTime}
                                                     typeRent={typeRent}
                                                     key={el.id}
