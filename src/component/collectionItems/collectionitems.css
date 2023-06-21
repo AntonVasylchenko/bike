@@ -31,3 +31,16 @@
     width: 100%;
 }
 
+@media(max-width: 1024px) {
+    .collection-items_filter {
+        align-items: flex-start;
+        flex-direction: column;
+        column-gap: 0;
+        row-gap: 20px;
+    }
+
+    .item-filter {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}

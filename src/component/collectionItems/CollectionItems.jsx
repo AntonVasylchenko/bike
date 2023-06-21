@@ -7,10 +7,16 @@ import { Select } from '../../ui/Select';
 
 const filtersArrBrand = ["All", "SCHWINN", "GIANT", "CANNONDALE",];
 const filtersArrSize = ["All", "20", "22", "24"];
-
+const initialTime = {
+    day: 0,
+    hour: 0,
+    minute: 0
+}
 
 const CollectionItems = () => {
     const collectionItems = useSelector(state => state.data.products);
+    const typeRent = useSelector(state => state.data.typeRent);
+    const timeRent = useSelector(state => state.data.timeRent);
     const [para, setPara] = React.useState(
         {
             brand: "",
@@ -82,6 +88,8 @@ const CollectionItems = () => {
                                         sortCollectionItems().map(el => {
                                             return (
                                                 <CollectionItem
+                                                    timeRent={timeRent.hasOwnProperty("day") ? timeRent : initialTime}
+                                                    typeRent={typeRent}
                                                     key={el.id}
                                                     booked={el.booked}
                                                     size={el.size}

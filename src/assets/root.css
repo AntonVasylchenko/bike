@@ -34,7 +34,8 @@
 .page-width {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 0 60px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .h1 {
@@ -69,7 +70,7 @@
     letter-spacing: 0px;
 }
 
-.captions{
+.captions {
     font-family: var(--font-main);
     font-size: var(--size-captions);
     font-weight: 500;
@@ -78,14 +79,15 @@
 }
 
 .swiper-wrapper {
-    -webkit-transition-timing-function:linear!important;    
-    transition-timing-function:linear!important; 
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
     position: relative;
 }
 
 
 @media(max-width: 768px) {
     .page-width {
-        padding: 0 40px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
