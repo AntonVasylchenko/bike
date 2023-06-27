@@ -2,6 +2,8 @@ import React from 'react'
 import "./collectionitem.css"
 import { Button } from '../../ui';
 import Modal from '../modal/Modal';
+import SignUp from '../form/SignUp';
+
 
 const CollectionItem = ({ isLogin, timeRent, typeRent, size, brand, title, price, booked }) => {
     const { day, hour, minute } = timeRent;
@@ -57,7 +59,13 @@ const CollectionItem = ({ isLogin, timeRent, typeRent, size, brand, title, price
                             </li>
                         </ul>
                     </div>
-                    {isLogin ? 1 : 2}
+                    {isLogin 
+                        ? 1 
+                        : <>
+                        <h2>You need to login to continue</h2>
+                        <SignUp/>
+                        </>
+                    }
                 </div>
             )
         }

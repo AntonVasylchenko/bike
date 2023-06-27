@@ -1,7 +1,7 @@
 import React from 'react'
 import "./collectionitems.css"
 import CollectionItem from '../collectionItem/CollectionItem';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Select } from '../../ui/Select';
 
 
@@ -17,8 +17,7 @@ const CollectionItems = () => {
     const collectionItems = useSelector(state => state.data.products);
     const typeRent = useSelector(state => state.data.typeRent);
     const timeRent = useSelector(state => state.data.timeRent);
-    const isLogin = useSelector(state => state.data.isLogin);
-    console.log(isLogin);
+    const isLogin = useSelector(state => state.user.isLogin);
     const [para, setPara] = React.useState(
         {
             brand: "",
