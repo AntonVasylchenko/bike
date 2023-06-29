@@ -3,13 +3,15 @@ import axios from 'axios';
 const initialState = {
     isLogin: false,
     users: {},
-    user: {}
+    user: {},
+    items: []
 }
 
 const CHECK_LOGIN = "CHECK_LOGIN";
 const CREATE_USER = "CREATE_USER";
 const GET_ALL_USERS = "GET_ALL_USERS";
 const CHECK_LOCAL = "CHECK_LOCAL";
+const USER_TO_CART = "USER_TO_CART";
 
 
 const userReducer = (state = initialState, action) => {
@@ -31,8 +33,13 @@ const userReducer = (state = initialState, action) => {
             let localLogin = JSON.parse(localStorage.getItem("user")) || false;
             let login = false;
             if (localLogin) {
-                const { phone, password } = localLogin;
+                const { number_phone:phone, number_password:password } = localLogin[0];
                 login = state.users.some(user => user.number_phone === phone && user.number_password === password);
+                return {
+                    ...state, 
+                        isLogin: login,
+                        user: localLogin
+                }
             }
             return {
                 ...state, isLogin: login
@@ -40,8 +47,11 @@ const userReducer = (state = initialState, action) => {
         }
 
         case CREATE_USER:
-            console.log(action.payload);
             axios.post("https://64892f7f5fa58521caaf4654.mockapi.io/User", action.payload);
+            return state
+        case USER_TO_CART: 
+            const items = {items:action.payload[1]};
+            axios.put(`https://64892f7f5fa58521caaf4654.mockapi.io/User/${action.payload[0]}`, items);
             return state
 
         default:

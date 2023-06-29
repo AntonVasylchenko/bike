@@ -4,12 +4,13 @@ import { NavLink } from 'react-router-dom';
 import { Button, Icon } from '../../ui';
 import Modal from '../modal/Modal';
 import Form from '../form/Form';
-
+import { useSelector } from 'react-redux';
 const links = ["About", "Rent", "Delivery", "Where to ride", "Contacts"];
 
 
 const Header = () => {
   const bodyRef = React.useRef(document.querySelector("body"));
+  const { isLogin } = useSelector(state => state.user);
   const [open, setOpen] = React.useState(false);
   const [sign, setSign] = React.useState(false)
 
@@ -58,17 +59,31 @@ const Header = () => {
               </a>
             </li>
             <li className="header-info_item" onClick={handleOpenForm}>
-              <span
-                className="header-info_account"
-              >
-                <Icon type={"account"} />
-              </span>
-              <Modal
-                toggleMode={setSign}
-                visible={sign}
-              >
-                <Form />
-              </Modal>
+              {
+                !isLogin
+                  ? <>
+                    <span
+                      className="header-info_account"
+                    >
+                      <Icon type={"account"} />
+                    </span>
+                    <Modal
+                      toggleMode={setSign}
+                      visible={sign}
+                    >
+                      <Form />
+                    </Modal>
+                  </>
+                  :
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "active header-info_account" : "header-info_account"
+                    }
+                    to="/account"
+                  >
+                    <Icon type={"account"} />
+                  </NavLink>
+              }
             </li>
             <li className="header-info_item">
               <NavLink

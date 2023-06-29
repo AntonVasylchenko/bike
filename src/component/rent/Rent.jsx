@@ -4,7 +4,8 @@ import { Select } from '../../ui/Select'
 import { getDeliveryAction, getRentAction, getTimeAction } from '../../store/action/dataAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { DateRangePicker } from 'rsuite';
-import "rsuite/dist/rsuite.css";
+import 'rsuite/dist/rsuite.min.css';
+
 
 const arrayType = ["Day", "Hour"];
 const arrayDelivery = ["Address", "Self-export"];

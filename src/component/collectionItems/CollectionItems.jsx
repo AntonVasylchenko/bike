@@ -1,8 +1,9 @@
 import React from 'react'
 import "./collectionitems.css"
 import CollectionItem from '../collectionItem/CollectionItem';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Select } from '../../ui/Select';
+import { setUserToCartAction } from '../../store/action/userAction';
 
 
 const filtersArrBrand = ["All", "SCHWINN", "GIANT", "CANNONDALE",];
@@ -14,10 +15,20 @@ const initialTime = {
 }
 
 const CollectionItems = () => {
+    const dispatch = useDispatch();
     const collectionItems = useSelector(state => state.data.products);
     const typeRent = useSelector(state => state.data.typeRent);
+    const typeDelivety = useSelector(state => state.data.typeDelivery);
     const timeRent = useSelector(state => state.data.timeRent);
     const isLogin = useSelector(state => state.user.isLogin);
+    const [item,setItems] = React.useState([]);
+    const addToCart = (obj) => {
+        const {id} = JSON.parse(localStorage.getItem("user"))[0];
+        if(id === undefined && id === null) return;
+        setItems(prev => [...prev,obj]);
+        dispatch(setUserToCartAction([id,item]))
+
+    }
     const [para, setPara] = React.useState(
         {
             brand: "",
@@ -92,12 +103,14 @@ const CollectionItems = () => {
                                                     isLogin={isLogin}
                                                     timeRent={timeRent.hasOwnProperty("day") ? timeRent : initialTime}
                                                     typeRent={typeRent}
+                                                    typeDelivety={typeDelivety}
                                                     key={el.id}
                                                     booked={el.booked}
                                                     size={el.size}
                                                     brand={el.brand}
                                                     title={el.name}
                                                     price={+el.price / 100}
+                                                    addToCart={addToCart}
                                                 />
                                             )
                                         })

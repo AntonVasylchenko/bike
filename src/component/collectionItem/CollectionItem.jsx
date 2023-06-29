@@ -5,7 +5,7 @@ import Modal from '../modal/Modal';
 import SignUp from '../form/SignUp';
 
 
-const CollectionItem = ({ isLogin, timeRent, typeRent, size, brand, title, price, booked }) => {
+const CollectionItem = ({addToCart,typeDelivety, isLogin, timeRent, typeRent, size, brand, title, price, booked }) => {
     const { day, hour, minute } = timeRent;
     const koef = hour !== 0 ? hour + ((minute * 100) / 60) / 100 : 1;
     const [visible, setVisible] = React.useState(false);
@@ -16,6 +16,11 @@ const CollectionItem = ({ isLogin, timeRent, typeRent, size, brand, title, price
         const bodyClassList = bodyRef.current.classList;
         bodyClassList.toggle("overflow-scroll", !visible);
     }
+
+    const handleToCart = () => {
+        addToCart({typeDelivety, isLogin, timeRent, typeRent, size, brand, title, price, booked })
+    }
+
     const contentModal = () => {
         if (day === 0 && hour === 0 && minute === 0) {
             return <h2>Please select type of rent for continue ...</h2>
@@ -60,7 +65,7 @@ const CollectionItem = ({ isLogin, timeRent, typeRent, size, brand, title, price
                         </ul>
                     </div>
                     {isLogin 
-                        ? 1 
+                        ? <Button onClick={handleToCart} className="modal-content_button">Confirm</Button>
                         : <>
                         <h2>You need to login to continue</h2>
                         <SignUp/>
