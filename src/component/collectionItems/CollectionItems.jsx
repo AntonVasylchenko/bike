@@ -23,12 +23,14 @@ const CollectionItems = () => {
     const isLogin = useSelector(state => state.user.isLogin);
     const [item,setItems] = React.useState([]);
     const addToCart = (obj) => {
+        setItems(prev => [...prev,obj]);
+    }
+
+    React.useEffect(()=> {
         const {id} = JSON.parse(localStorage.getItem("user"))[0];
         if(id === undefined && id === null) return;
-        setItems(prev => [...prev,obj]);
         dispatch(setUserToCartAction([id,item]))
-
-    }
+    },[item])
     const [para, setPara] = React.useState(
         {
             brand: "",

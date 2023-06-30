@@ -32,7 +32,7 @@ const Header = () => {
 
       return (
         <li key={`${el}_${index}`} className="header-nav_item">
-          <NavLink className={linkClassName} to={linkPath}>
+          <NavLink className={linkClassName} to={`/bike/${linkPath}`}>
             {el}
           </NavLink>
         </li>

@@ -1,0 +1,84 @@
+.request-rent {}
+
+.request-rent_container {
+    padding: 56px 40px;
+    border-radius: 20px;
+    background-color: var(--color-bg-section);
+}
+
+.request-rent_title {
+    color: var(--color-text);
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+
+.request-rent_wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.request-rent_wrapper>*:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+
+.rent-item span {
+    color: var(--color-elem);
+}
+
+.rent-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    column-gap: 40px;
+    row-gap: 20px;
+}
+
+.rent-item>* {
+    margin: 0;
+    padding: 0;
+    color: var(--color-text);
+    max-width: calc(100% / 5 - 40px * 4 / 5);
+    width: calc(100% / 5 - 40px * 4 / 5);
+    width: 100%;
+}
+
+.rent-item_img {
+    width: 50px;
+    height: 25px;
+    position: relative;
+}
+
+.rent-item_img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rent-item_title {
+    text-align: center;
+}
+
+.rent-item_rent {}
+
+.rent-item_time {}
+
+.rent-item_price {
+    color: var(--color-elem);
+}
+.request-rent_total  {
+    margin-top: 12px;
+    color: var(--color-text);
+    width: 100%;
+}
+.request-rent_total span {
+    color: var(--color-elem);
+}

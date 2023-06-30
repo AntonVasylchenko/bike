@@ -5,3 +5,5 @@ export { default as CollectionItems } from "./collectionItems/CollectionItems";
 export { default as Rent } from "./rent/Rent";
 export { default as Modal } from "./modal/Modal";
 export { default as Form } from "./form/Form";
+export { default as Footer } from "./footer/Footer";
+export { default as RequestRent } from "./requestRent/RequestRent";
