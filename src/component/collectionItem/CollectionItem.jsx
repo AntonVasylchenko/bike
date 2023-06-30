@@ -2,18 +2,28 @@ import React from 'react'
 import "./collectionitem.css"
 import { Button } from '../../ui';
 import Modal from '../modal/Modal';
+import SignUp from '../form/SignUp';
+import { NavLink } from 'react-router-dom';
 
-const CollectionItem = ({ isLogin, timeRent, typeRent, size, brand, title, price, booked }) => {
+
+const CollectionItem = ({ addToCart, typeDelivety, isLogin, timeRent, typeRent, size, brand, title, price, booked }) => {
     const { day, hour, minute } = timeRent;
     const koef = hour !== 0 ? hour + ((minute * 100) / 60) / 100 : 1;
     const [visible, setVisible] = React.useState(false);
     const bodyRef = React.useRef(document.querySelector("body"));
+    const [added, setAdded] = React.useState(false);
 
     const showModal = () => {
         setVisible(!visible);
         const bodyClassList = bodyRef.current.classList;
         bodyClassList.toggle("overflow-scroll", !visible);
     }
+
+    const handleToCart = () => {
+        addToCart({ typeDelivety, isLogin, timeRent, typeRent, size, brand, title, price, booked })
+        setAdded((prev) => !prev);
+    }
+
     const contentModal = () => {
         if (day === 0 && hour === 0 && minute === 0) {
             return <h2>Please select type of rent for continue ...</h2>
@@ -51,13 +61,27 @@ const CollectionItem = ({ isLogin, timeRent, typeRent, size, brand, title, price
                                     {
                                         typeRent === "Day"
                                             ? (price * day) + " AED"
-                                            : ((price / 24).toFixed(0) * koef).toFixed(0)  + " AED"
+                                            : ((price / 24).toFixed(0) * koef).toFixed(0) + " AED"
                                     }
                                 </span>
                             </li>
                         </ul>
                     </div>
-                    {isLogin ? 1 : 2}
+                    {isLogin
+                        ?
+                        <>
+                            <Button
+                                disabled={added}
+                                onClick={handleToCart}
+                                className="modal-content_button">{added ? "Confirm" : "Added"}
+                            </Button>
+                            {!added ? "" : <h2>Your bike has been added to the cart.To view it, go to your <NavLink to="/cart">account</NavLink> </h2>  }
+                        </>
+                        : <>
+                            <h2>You need to login to continue</h2>
+                            <SignUp />
+                        </>
+                    }
                 </div>
             )
         }

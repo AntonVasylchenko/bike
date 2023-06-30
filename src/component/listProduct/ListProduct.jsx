@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { CardProduct } from '../cardProduct/CardProduct'
 import { Button, Preloader } from '../../ui'
 import { getCollectionAction } from '../../store/action/dataAction'
+import { allUserFetch } from '../../api/user'
 
 
 
@@ -14,6 +15,7 @@ const ListProduct = () => {
     const data = useSelector(state => state.data);
     React.useEffect(() => {
         dispath(fetchData())
+        dispath(allUserFetch())
     }, [])
 
     const { isLoaded, data: type, collection } = data;

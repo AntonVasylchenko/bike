@@ -2,8 +2,20 @@ html,
 body {
     font-size: 16px;
     font-family: var(--font-main);
+    height: 100%;
 }
 
+#root{
+    height: 100%;
+}
+.App {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1 1 100%;
+}
 .button {
     border: 1px solid transparent;
     display: inline-block;
@@ -173,4 +185,67 @@ svg:hover {
     background-repeat: no-repeat;
     background-position: right 1rem top 50%;
     background-size: 0.65rem auto;
+}
+
+.form_sign {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+.form-agree {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.form-agree label {
+    margin-left: 15px;
+    color: var(--color-text);
+}
+.form_sign .btn-form {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+}
+.form-input {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.form-input label{
+    color: var(--color-captions);
+}
+.form-input input{
+    border: 1px solid #DDE3EB;
+    border-radius: 15px;
+    background-color: #fff;
+    width: 100%;
+    padding: 20px;
+}
+.btn-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    color: var(--color-text);
+}
+
+.btn-login span {
+    color: var(--color-elem);
+}
+
+.modal-content .form_sign {
+    row-gap: 20px;
+}
+.modal-content .form_sign .btn-form {
+    padding: 10px;
+}
+.modal-content .form-input {
+    row-gap: 5px;
+}
+.modal-content .form-input input{
+    padding: 10px;
+}
+.button.modal-content_button  {
+    width: 100%;
 }

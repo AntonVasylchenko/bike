@@ -1,7 +1,7 @@
 import React from 'react'
-import { Header } from './component'
+import { Header, Footer} from './component'
 import { Route, Routes } from 'react-router-dom'
-import { Home } from './page'
+import { Home, Rent } from './page'
 
 
 
@@ -12,8 +12,10 @@ function App() {
       <main>
         <Routes>
           <Route path="/bike" element={<Home/>}></Route>
+          <Route path="/bike/rent" element={<Rent/>}></Route>
         </Routes>
       </main>
+      <Footer/>
     </div>
   )
 }
