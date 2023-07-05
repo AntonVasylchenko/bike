@@ -7,3 +7,6 @@ export { default as Modal } from "./modal/Modal";
 export { default as Form } from "./form/Form";
 export { default as Footer } from "./footer/Footer";
 export { default as RequestRent } from "./requestRent/RequestRent";
+export { default as About } from "./about/About";
+export { default as DeliveryComponent } from "./delivery/DeliveryComponent";
+export { default as WhereToRide } from "./where/WhereToRide";

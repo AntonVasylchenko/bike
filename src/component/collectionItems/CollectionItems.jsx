@@ -27,6 +27,7 @@ const CollectionItems = () => {
     }
 
     React.useEffect(()=> {
+        if (!localStorage.getItem("user")) return
         const {id} = JSON.parse(localStorage.getItem("user"))[0];
         if(id === undefined && id === null) return;
         dispatch(setUserToCartAction([id,item]))

@@ -1,0 +1,16 @@
+.delivery {}
+
+.delivery-wrapper {
+    background-color: var(--color-bg-section);
+    border-radius: 20px;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.delivery-title,
+.delivery-subtitle,
+.delivery-text {
+    color: var(--color-text);
+}
