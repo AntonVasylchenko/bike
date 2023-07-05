@@ -23,8 +23,10 @@ const userReducer = (state = initialState, action) => {
             }
         case CHECK_LOGIN: {
             const { phone, password } = action.payload;
+            console.log(phone, password);
             const filteredUsers = state.users.filter(user => user.number_phone === phone && user.number_password === password);
             localStorage.setItem("user", JSON.stringify(filteredUsers));
+
             return {
                 ...state, user: filteredUsers
             }
@@ -33,6 +35,16 @@ const userReducer = (state = initialState, action) => {
             let localLogin = JSON.parse(localStorage.getItem("user")) || false;
             let login = false;
             if (localLogin) {
+                console.log(localLogin);
+                if (localStorage.getItem("userCart")) {
+                    localLogin[0].items = [JSON.parse(localStorage.getItem("usercart"))];
+                    let newObjCart = JSON.parse(localStorage.getItem("usercart"))[0].items;
+                    localLogin[0].items = newObjCart;
+                } else {
+                    console.log(12);
+                }
+                console.log(123);
+                console.log(localLogin);
                 const { number_phone:phone, number_password:password } = localLogin[0];
                 login = state.users.some(user => user.number_phone === phone && user.number_password === password);
                 return {
@@ -51,6 +63,10 @@ const userReducer = (state = initialState, action) => {
             return state
         case USER_TO_CART: 
             const items = {items:action.payload[1]};
+            const localLogin = JSON.parse(localStorage.getItem("user"));
+            const newLocal = [{...localLogin[0],items:action.payload[1]}];
+            localStorage.setItem("user", JSON.stringify(newLocal));
+            localStorage.setItem("userCart", JSON.stringify(items));
             axios.put(`https://64892f7f5fa58521caaf4654.mockapi.io/User/${action.payload[0]}`, items);
             return state
 

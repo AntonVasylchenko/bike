@@ -1,2 +1,5 @@
 export {default as Home } from "./Home"
 export {default as Rent } from "./Rent"
+export {default as About } from "./About"
+export {default as Delivery } from "./Delivety"
+export {default as ToRide } from "./ToRide"

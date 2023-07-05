@@ -1,11 +1,11 @@
 import React from 'react'
 import "./header.css"
 import { NavLink } from 'react-router-dom';
-import { Button, Icon } from '../../ui';
+import { Icon } from '../../ui';
 import Modal from '../modal/Modal';
 import Form from '../form/Form';
 import { useSelector } from 'react-redux';
-const links = ["About", "Rent", "Delivery", "Where to ride", "Contacts"];
+const links = ["About", "Rent", "Delivery", "Where to ride"];
 
 
 const Header = () => {
@@ -85,16 +85,6 @@ const Header = () => {
                   </NavLink>
               }
             </li>
-            <li className="header-info_item">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "active header-info_feedback" : "header-info_feedback"
-                }
-                to="/feedback"
-              >
-                <Button disabled={false}>Feedback</Button>
-              </NavLink>
-            </li>
           </ul>
         </nav>
         <div className="header-icon" onClick={handleOpenMenu}>
@@ -121,16 +111,6 @@ const Header = () => {
                 to="/account"
               >
                 <Icon type={"account"} />
-              </NavLink>
-            </li>
-            <li className="header-info_item">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "active header-info_feedback" : "header-info_feedback"
-                }
-                to="/feedback"
-              >
-                <Button disabled={false}>Feedback</Button>
               </NavLink>
             </li>
           </ul>

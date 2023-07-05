@@ -3,7 +3,7 @@ import "./footer.css"
 import { Icon } from '../../ui'
 import { NavLink } from 'react-router-dom'
 
-const links = ["About", "Rent", "Delivery", "Where to ride", "Contacts"];
+const links = ["About", "Rent", "Delivery", "Where to ride"];
 const Footer = () => {
   const renderNavLinks = () => {
     return links.map((el, index) => {
