@@ -8,7 +8,7 @@ import 'swiper/css';
 const HeroBanner = () => {
   const imageText = [
     { id: React.useId(), text: "Helmet", path: "helmet.png" },
-    { id: React.useId(), text: "Flashlight", path: "Flashlight.png" },
+    { id: React.useId(), text: "Flashlight", path: "flashlight.png" },
     { id: React.useId(), text: "Castle", path: "castle.png" }
   ]
 
