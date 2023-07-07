@@ -74,7 +74,7 @@ const CollectionItem = ({ addToCart, typeDelivety, isLogin, timeRent, typeRent, 
                                 onClick={handleToCart}
                                 className="modal-content_button">{added ? "Confirm" : "Added"}
                             </Button>
-                            {!added ? "" : <h2>Your bike has been added to the cart.To view it, go to your <NavLink to="/cart">account</NavLink> </h2>  }
+                            {!added ? "" : <h2>Your bike has been added to the cart.To view it, go to your <NavLink to="/bike/account">account</NavLink> </h2>  }
                         </>
                         : <>
                             <h2>You need to login to continue</h2>
