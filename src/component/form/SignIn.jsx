@@ -1,7 +1,7 @@
 import React from 'react'
 import Input from '../../ui/Input'
 import Button from '../../ui/Button'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getCheckLoginAction } from '../../store/action/userAction'
 
 
@@ -23,6 +23,7 @@ const formInObj = [
 
 const SignIn = () => {
     const dispath = useDispatch();
+    const allUsers = useSelector(state => state.user.users);
     const [user, setUser] = React.useState({
         phone: "",
         password: ""
@@ -34,7 +35,13 @@ const SignIn = () => {
 
     const checkLogin = (event) => {
         event.preventDefault();
-        dispath(getCheckLoginAction(user));
+        const isUser =  allUsers.some(el => el.number_phone === user.phone && el.number_password === user.password);
+        if (isUser) {
+            dispath(getCheckLoginAction(user));
+            window.location.reload();
+        } else {
+            alert("Check the number or password")
+        }
     }
 
     return (

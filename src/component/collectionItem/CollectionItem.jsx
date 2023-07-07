@@ -2,7 +2,6 @@ import React from 'react'
 import "./collectionitem.css"
 import { Button } from '../../ui';
 import Modal from '../modal/Modal';
-import SignUp from '../form/SignUp';
 import { NavLink } from 'react-router-dom';
 
 
@@ -79,7 +78,6 @@ const CollectionItem = ({ addToCart, typeDelivety, isLogin, timeRent, typeRent, 
                         </>
                         : <>
                             <h2>You need to login to continue</h2>
-                            <SignUp />
                         </>
                     }
                 </div>
