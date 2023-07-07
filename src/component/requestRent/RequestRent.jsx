@@ -3,7 +3,6 @@ import "./requestRent.css"
 const RequestRent = ({ users }) => {
   const renderTotal = () => {
     if (users.users[0]) {
-      console.log(users.users[0].items);
       return users.users[0].items.reduce(
         (accumulator, item) => accumulator + item.price,
         0

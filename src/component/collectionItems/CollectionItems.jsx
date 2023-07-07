@@ -24,14 +24,19 @@ const CollectionItems = () => {
     const [item,setItems] = React.useState([]);
     const addToCart = (obj) => {
         setItems(prev => [...prev,obj]);
-    }
-
-    React.useEffect(()=> {
         if (!localStorage.getItem("user")) return
         const {id} = JSON.parse(localStorage.getItem("user"))[0];
         if(id === undefined && id === null) return;
-        dispatch(setUserToCartAction([id,item]))
-    },[item])
+        dispatch(setUserToCartAction([id,item]));
+        localStorage.setItem("localItem",JSON.stringify(item))
+    
+    }
+
+    React.useEffect(()=> {
+        if (localStorage.getItem("localItem")) {
+            setItems(JSON.parse(localStorage.getItem("localItem")));
+        }
+    },[])
     const [para, setPara] = React.useState(
         {
             brand: "",

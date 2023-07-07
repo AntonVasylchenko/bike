@@ -5,7 +5,7 @@ import { Icon } from '../../ui';
 import Modal from '../modal/Modal';
 import Form from '../form/Form';
 import { useSelector } from 'react-redux';
-const links = ["About", "Rent", "Delivery", "Where to ride"];
+const links = ["About", "Delivery", "Where to ride"];
 
 
 const Header = () => {
@@ -79,7 +79,7 @@ const Header = () => {
                     className={({ isActive }) =>
                       isActive ? "active header-info_account" : "header-info_account"
                     }
-                    to="/account"
+                    to="/bike/account"
                   >
                     <Icon type={"account"} />
                   </NavLink>
@@ -108,7 +108,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   isActive ? "active header-info_account" : "header-info_account"
                 }
-                to="/account"
+                to="/bike/account"
               >
                 <Icon type={"account"} />
               </NavLink>
